@@ -13,5 +13,6 @@ headers = test_table.find_all('th')
 header_titles = []
 for header in headers:
     header_titles.append(header.text[:-1])  # Remove trailing newline character
-print(header_titles)
-
+all_rows = test_table.find_all('tr')
+data = all_rows[1:]
+print(data)
