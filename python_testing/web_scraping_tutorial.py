@@ -59,7 +59,18 @@ for row in table_rows:
 filename = 'List of old-growth forests - Wikipedia.html'
 f = open(filename,encoding='utf-8')
 new_soup = soup(f,'html.parser')
-print(new_soup.h1)
 
-print(new_soup.find_all('table', class_='wikitable sortable'))
+references_list_raw = page_soup.find_all('ol', class_='references')
+reference_list = references_list_raw[0].find_all('li')
+all_references = []
+for list_item in reference_list:
+    references = []
+    for reference in list_item.find_all('a'):
+        references.append(reference['href'])
+    all_references.append(references)
+
+print(all_references)
+
+
+
 
