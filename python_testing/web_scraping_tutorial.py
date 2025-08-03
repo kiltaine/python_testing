@@ -50,8 +50,16 @@ f.write(header_string)
 for row in table_rows:
     row_string = ''
     for column in row:
-        column_string = columnre
-        row_string += column + ','
+        column_string = column.replace(',','')
+        row_string += column_string + ','
     row_string = row_string[:-1]     
     row_string += '\n'
     f.write(row_string)
+
+filename = 'List of old-growth forests - Wikipedia.html'
+f = open(filename,encoding='utf-8')
+new_soup = soup(f,'html.parser')
+print(new_soup.h1)
+
+print(new_soup.find_all('table', class_='wikitable sortable'))
+
