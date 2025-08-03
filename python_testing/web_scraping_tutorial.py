@@ -50,6 +50,7 @@ f.write(header_string)
 for row in table_rows:
     row_string = ''
     for column in row:
+        column_string = columnre
         row_string += column + ','
     row_string = row_string[:-1]     
     row_string += '\n'
