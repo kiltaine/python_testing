@@ -1,0 +1,17 @@
+[
+    {
+        "animal_name": "a",
+        "animal_species": "a",
+        "age": "a"
+    },
+    {
+        "animal_name": "b",
+        "animal_species": "b",
+        "age": "b"
+    },
+    {
+        "animal_name": "c",
+        "animal_species": "c",
+        "age": "c"
+    }
+]
