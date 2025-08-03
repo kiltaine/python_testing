@@ -36,7 +36,7 @@ for row in data:
 
 
 filename = 'test_table.csv'
-f = open(filename, 'w')
+f = open(filename, 'w', encoding='utf-8')
 header_string = ''
 for title in header_titles:
     header_string += title + ','
@@ -51,5 +51,6 @@ for row in table_rows:
     row_string = ''
     for column in row:
         row_string += column + ','
+    row_string = row_string[:-1]     
     row_string += '\n'
     f.write(row_string)
