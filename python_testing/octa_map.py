@@ -264,6 +264,14 @@ class SquareMapApp:
             entity["armor"] = entry["armor"].get()
             entity["weapon"] = entry["weapon"].get()
             self.canvas.itemconfig(entity["id"], text=f"{entity['label']}\n{entity['hp']}HP")
+            self.entities_backup = [
+                {
+                    **e,
+                    "hp": entity["hp"] if e["label"] == entity["label"] else e["hp"],
+                    "armor": entity["armor"] if e["label"] == entity["label"] else e["armor"],
+                    "weapon": entity["weapon"] if e["label"] == entity["label"] else e["weapon"]
+                } for e in self.entities_backup
+            ]
 
 if __name__ == "__main__":
     root = tk.Tk()
